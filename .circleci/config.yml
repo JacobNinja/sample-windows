@@ -1,12 +1,16 @@
 version: 2.1
 
-orbs:
-  win: circleci/windows@1.0.0
-
 jobs:
   build:
-    executor: win/vs2019
+    resource_class: large
+    docker:
+      - image: circleci/ruby:2.4.1-jessie
     steps:
       - checkout
-      - run: Write-Host 'Goodbye, Windows. For I am blocked'
-      - run: Write-Host 'Hello darkness my old friend'
+      - run: echo "A first hello"
+
+workflows:
+  version: 2
+  testing:
+    jobs:
+      - build
