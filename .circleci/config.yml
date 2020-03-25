@@ -8,5 +8,5 @@ jobs:
     executor: win/vs2019
     steps:
       - checkout
-      - run: Write-Host 'Goodbye, Windows. For I am blocked'
+      - run: sleep 60
       - run: Write-Host 'Hello darkness my old friend'
